@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9E2A3C"/>
+      <stop offset="100%" stop-color="#701825"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5D061"/>
+      <stop offset="50%" stop-color="#E5B238"/>
+      <stop offset="100%" stop-color="#C59324"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="url(#primaryGrad)"/>
+  <!-- Gift box base -->
+  <rect x="10" y="22" width="28" height="18" rx="3" fill="#FFFDFB" opacity="0.95"/>
+  <!-- Gift box lid -->
+  <rect x="8" y="17" width="32" height="6" rx="2" fill="#FAF5ED"/>
+  <!-- Gold Ribbon vertical -->
+  <rect x="22" y="17" width="4" height="23" fill="url(#goldGrad)"/>
+  <!-- Ribbon bow loops -->
+  <path d="M24 17C21 11 14 10 16 15C18 17 23 17 24 17Z" fill="url(#goldGrad)"/>
+  <path d="M24 17C27 11 34 10 32 15C30 17 25 17 24 17Z" fill="url(#goldGrad)"/>
+  <circle cx="24" cy="17" r="2.5" fill="#FFEAA7"/>
+  <!-- Sparkle -->
+  <path d="M38 10L39 12L41 13L39 14L38 16L37 14L35 13L37 12Z" fill="url(#goldGrad)"/>
+</svg>

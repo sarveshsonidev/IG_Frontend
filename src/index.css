@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-cursive: 'Great Vibes', cursive;
+
+  --color-brand-primary: #882434;
+  --color-brand-primary-dark: #6E1B28;
+  --color-brand-primary-light: #A43547;
+  --color-brand-gold: #C59B27;
+  --color-brand-gold-light: #E5BE53;
+  --color-brand-gold-bg: #FDF9EE;
+  --color-brand-cream: #FAF8F5;
+  --color-brand-cream-dark: #F3EFEA;
+  --color-brand-card: #FFFFFF;
+  --color-brand-border: #EAE4DA;
+  --color-brand-border-dark: #D4CABE;
+  --color-brand-dark: #1E1E1E;
+  --color-brand-muted: #6B7280;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: #FAF8F5;
+    color: #1E1E1E;
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-luxury {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8D0C5;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C59B27;
+}
+
+/* Glassmorphism & luxury card shadows */
+.luxury-card {
+  background: #FFFFFF;
+  border: 1px solid #EAE4DA;
+  box-shadow: 0 4px 20px -2px rgba(26, 26, 26, 0.04), 0 2px 6px -1px rgba(26, 26, 26, 0.02);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover {
+  box-shadow: 0 12px 30px -4px rgba(136, 36, 52, 0.08), 0 4px 12px -2px rgba(26, 26, 26, 0.04);
+  transform: translateY(-2px);
+  border-color: #D4CABE;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #F5D061 0%, #E5B238 50%, #C59324 100%);
+}
+
+.ruby-gradient {
+  background: linear-gradient(135deg, #9E2A3C 0%, #882434 50%, #6E1B28 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #AA771C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Shimmer animation for badges & skeleton */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-loading {
+  background: linear-gradient(90deg, #F0ECE4 25%, #F8F6F2 50%, #F0ECE4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Pulsing subtle glow */
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s infinite ease-in-out;
+}
