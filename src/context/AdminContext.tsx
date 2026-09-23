@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Product, Order, OrderStatus, CorporateEnquiry, Coupon } from '../types';
 import { INITIAL_PRODUCTS } from '../data/products';
 import { AVAILABLE_COUPONS } from '../data/coupons';
+import { API_BASE_URL } from '../services/api';
 
 interface AdminContextType {
   products: Product[];
@@ -302,7 +303,7 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     setOrders(prev => [newOrder, ...prev]);
 
     // Asynchronously sync with Spring Boot backend
-    fetch('/api/orders', {
+    fetch(`${API_BASE_URL}/orders`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -408,7 +409,7 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     };
     setCorporateEnquiries(prev => [newEnquiry, ...prev]);
 
-    fetch('/api/corporate/inquire', {
+    fetch(`${API_BASE_URL}/corporate/inquire`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

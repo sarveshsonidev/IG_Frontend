@@ -1,6 +1,7 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL 
-  ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api` 
-  : '/api';
+export const API_BASE_URL = (
+  import.meta.env.VITE_API_URL || 'https://ig-backend-gucx.onrender.com'
+).replace(/\/$/, '').replace(/\/api$/, '') + '/api';
+
 
 function getAuthHeader(): HeadersInit {
   const token = localStorage.getItem('impressive_token');

@@ -14,6 +14,7 @@ import {
 import { useAdmin } from '../context/AdminContext';
 import { useShop } from '../context/ShopContext';
 import { Order, OrderStatus } from '../types';
+import { API_BASE_URL } from '../services/api';
 
 interface TrackOrderPageProps {
   initialOrderId?: string;
@@ -39,7 +40,7 @@ export const TrackOrderPage: React.FC<TrackOrderPageProps> = ({ initialOrderId }
     setErrorMessage('');
 
     try {
-      const res = await fetch(`/api/orders/track/${encodeURIComponent(orderQuery.trim())}`);
+      const res = await fetch(`${API_BASE_URL}/orders/track/${encodeURIComponent(orderQuery.trim())}`);
       if (res.ok) {
         const backendOrder = await res.json();
         // Parse shipping address JSON
