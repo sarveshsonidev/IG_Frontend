@@ -41,9 +41,16 @@ const MainAppContent: React.FC = () => {
   const { products } = useAdmin();
   const { showToast } = useShop();
 
+  // Helper to detect admin route
+  const checkIsAdminRoute = () => {
+    const cleanPath = window.location.pathname.toLowerCase().replace(/\/+$/, '');
+    const cleanHash = window.location.hash.toLowerCase();
+    return cleanHash === '#admin' || cleanPath === '/admin';
+  };
+
   // Navigation State
   const [currentView, setCurrentView] = useState<string>(() => {
-    if (window.location.hash === '#admin' || window.location.pathname === '/admin') {
+    if (checkIsAdminRoute()) {
       return 'admin';
     }
     return 'home';
@@ -58,15 +65,19 @@ const MainAppContent: React.FC = () => {
   const [isCorporateQuoteOpen, setIsCorporateQuoteOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
-  // Sync hash changes (e.g., direct navigation to #admin)
+  // Sync hash and pathname changes (e.g., direct navigation to /admin or #admin)
   useEffect(() => {
-    const handleHashChange = () => {
-      if (window.location.hash === '#admin') {
+    const handleRouteChange = () => {
+      if (checkIsAdminRoute()) {
         setCurrentView('admin');
       }
     };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('hashchange', handleRouteChange);
+    window.addEventListener('popstate', handleRouteChange);
+    return () => {
+      window.removeEventListener('hashchange', handleRouteChange);
+      window.removeEventListener('popstate', handleRouteChange);
+    };
   }, []);
 
   // Monitor scroll for back-to-top button
@@ -138,6 +149,7 @@ const MainAppContent: React.FC = () => {
   if (currentView === 'admin') {
     return (
       <AdminDashboard onBackToStore={() => {
+        window.history.pushState(null, '', '/');
         window.location.hash = '';
         setCurrentView('home');
       }} />
