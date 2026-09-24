@@ -99,7 +99,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   ];
 
   return (
-    <div className="space-y-20 pb-16">
+    <div className="space-y-16 sm:space-y-20 pb-16 w-full max-w-full overflow-x-hidden">
       {/* 1. HERO SECTION */}
       <section className="relative overflow-hidden bg-linear-to-b from-[#FAF8F5] via-[#FFFDFB] to-[#F3EFEA] pt-8 pb-16 sm:py-20 lg:py-24 border-b border-[#EAE4DA]">
         {/* Subtle Decorative Elements */}
@@ -157,26 +157,26 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
 
               {/* Micro Trust Proofs */}
-              <div className="pt-6 grid grid-cols-3 gap-4 border-t border-stone-200/80 max-w-lg mx-auto lg:mx-0 text-left">
+              <div className="pt-6 grid grid-cols-3 gap-2 sm:gap-4 border-t border-stone-200/80 max-w-lg mx-auto lg:mx-0 text-left">
                 <div className="space-y-0.5">
-                  <div className="text-xl sm:text-2xl font-bold font-serif text-stone-900">
+                  <div className="text-lg sm:text-2xl font-bold font-serif text-stone-900">
                     50,000+
                   </div>
-                  <div className="text-[11px] text-stone-500 font-medium">Happy Smiles Delivered</div>
+                  <div className="text-[10px] sm:text-[11px] text-stone-500 font-medium">Happy Smiles Delivered</div>
                 </div>
 
                 <div className="space-y-0.5">
-                  <div className="text-xl sm:text-2xl font-bold font-serif text-stone-900 flex items-center gap-1">
-                    4.9 <Star className="w-4 h-4 fill-amber-400 text-amber-400 inline" />
+                  <div className="text-lg sm:text-2xl font-bold font-serif text-stone-900 flex items-center gap-1">
+                    4.9 <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-amber-400 text-amber-400 inline" />
                   </div>
-                  <div className="text-[11px] text-stone-500 font-medium">Customer Rating</div>
+                  <div className="text-[10px] sm:text-[11px] text-stone-500 font-medium">Customer Rating</div>
                 </div>
 
                 <div className="space-y-0.5">
-                  <div className="text-xl sm:text-2xl font-bold font-serif text-stone-900">
+                  <div className="text-lg sm:text-2xl font-bold font-serif text-stone-900">
                     24h
                   </div>
-                  <div className="text-[11px] text-stone-500 font-medium">Fast Dispatch Promise</div>
+                  <div className="text-[10px] sm:text-[11px] text-stone-500 font-medium">Fast Dispatch Promise</div>
                 </div>
               </div>
             </div>
@@ -220,7 +220,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </div>
 
                 {/* Floating Heartfelt Testimonial Badge */}
-                <div className="absolute -top-4 -left-4 sm:-left-8 bg-white p-3 rounded-2xl shadow-xl border border-stone-200/80 flex items-center gap-2.5 max-w-[200px] animate-pulse-subtle">
+                <div className="absolute top-2 left-2 sm:-top-4 sm:-left-6 bg-white p-2.5 sm:p-3 rounded-2xl shadow-xl border border-stone-200/80 flex items-center gap-2 sm:gap-2.5 max-w-[190px] sm:max-w-[200px] animate-pulse-subtle">
                   <div className="w-8 h-8 rounded-full bg-[#882434]/10 text-[#882434] flex items-center justify-center shrink-0">
                     <Heart className="w-4 h-4 fill-[#882434]" />
                   </div>

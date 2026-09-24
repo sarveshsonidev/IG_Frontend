@@ -28,6 +28,9 @@
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
   }
 
   body {
@@ -35,7 +38,17 @@
     color: #1E1E1E;
     font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
     overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  #root {
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
   }
 
   h1, h2, h3, .font-serif-luxury {

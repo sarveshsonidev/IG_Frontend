@@ -158,7 +158,7 @@ const MainAppContent: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#1E1E1E]">
+    <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#1E1E1E] w-full max-w-full overflow-x-hidden">
       {/* 1. Header */}
       <Header
         currentView={currentView}
@@ -168,7 +168,7 @@ const MainAppContent: React.FC = () => {
       />
 
       {/* 2. Main Page Views */}
-      <main className="flex-1 pb-20 lg:pb-0">
+      <main className="flex-1 pb-20 lg:pb-0 w-full max-w-full overflow-x-hidden">
         {currentView === 'home' && (
           <HomePage
             products={products}

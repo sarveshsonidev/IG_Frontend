@@ -71,7 +71,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-40 w-full bg-[#FAF8F5]/95 backdrop-blur-md border-b border-[#EAE4DA] shadow-xs">
       {/* 1. Top Announcement Bar */}
-      <div className="bg-[#882434] text-[#FAF8F5] text-xs py-2 px-4 transition-all">
+      <div className="bg-[#882434] text-[#FAF8F5] text-xs py-2 px-3 sm:px-4 transition-all w-full overflow-hidden">
         <div className="max-w-7xl mx-auto flex items-center justify-between font-medium">
           <div className="hidden md:flex items-center gap-2 opacity-90 text-[11px] tracking-wider uppercase font-semibold">
             <Sparkles className="w-3.5 h-3.5 text-[#F5D061]" />
@@ -80,10 +80,10 @@ export const Header: React.FC<HeaderProps> = ({
             <span>Express Dispatch In 24h</span>
           </div>
 
-          <div className="w-full md:w-auto text-center flex items-center justify-center gap-2">
-            <span>Make Every Gift Personal ❤️</span>
+          <div className="w-full md:w-auto text-center flex items-center justify-center gap-1.5 sm:gap-2 truncate">
+            <span className="hidden sm:inline">Make Every Gift Personal ❤️</span>
             <span className="hidden sm:inline">|</span>
-            <span className="text-[#F5D061] font-semibold">Free Shipping on Orders over ₹999</span>
+            <span className="text-[#F5D061] font-semibold truncate">Free Shipping on Orders over ₹999</span>
             <span className="hidden sm:inline">|</span>
             <span className="hidden sm:inline opacity-85">Use Code <strong className="underline decoration-[#F5D061] tracking-wide">FIRST10</strong></span>
           </div>
@@ -117,13 +117,13 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* 2. Main Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20 gap-2">
           {/* Mobile menu trigger */}
-          <div className="flex items-center lg:hidden">
+          <div className="flex items-center lg:hidden shrink-0">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 -ml-2 text-stone-700 hover:text-[#882434] transition-colors focus:outline-hidden"
+              className="p-1.5 sm:p-2 -ml-1 text-stone-700 hover:text-[#882434] transition-colors focus:outline-hidden"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -131,7 +131,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-stone-700 hover:text-[#882434] ml-1"
+              className="p-1.5 sm:p-2 text-stone-700 hover:text-[#882434]"
               aria-label="Search"
             >
               <Search className="w-5 h-5" />
@@ -139,25 +139,25 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Brand Logo & Wordmark */}
-          <div className="flex-1 lg:flex-initial flex items-center justify-center lg:justify-start">
+          <div className="flex-1 lg:flex-initial flex items-center justify-center lg:justify-start min-w-0">
             <button
               onClick={() => handleNavClick('home')}
-              className="group flex items-center gap-3 text-left cursor-pointer focus:outline-hidden"
+              className="group flex items-center gap-2 sm:gap-3 text-left cursor-pointer focus:outline-hidden truncate"
             >
               {/* Luxury Gift Icon Emblem */}
-              <div className="w-11 h-11 rounded-xl bg-linear-to-br from-[#9E2A3C] via-[#882434] to-[#6E1B28] p-0.5 shadow-md flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                <div className="w-full h-full rounded-[10px] bg-linear-to-br from-[#882434] to-[#5C1622] flex items-center justify-center relative overflow-hidden border border-[#D4AF37]/30">
-                  <Gift className="w-5 h-5 text-[#FAF8F5] drop-shadow-sm group-hover:rotate-6 transition-transform" />
+              <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-linear-to-br from-[#9E2A3C] via-[#882434] to-[#6E1B28] p-0.5 shadow-md flex items-center justify-center group-hover:scale-105 transition-transform duration-300 shrink-0">
+                <div className="w-full h-full rounded-[6px] sm:rounded-[10px] bg-linear-to-br from-[#882434] to-[#5C1622] flex items-center justify-center relative overflow-hidden border border-[#D4AF37]/30">
+                  <Gift className="w-4 h-4 sm:w-5 sm:h-5 text-[#FAF8F5] drop-shadow-sm group-hover:rotate-6 transition-transform" />
                   <div className="absolute -top-3 -right-3 w-6 h-6 bg-[#F5D061]/20 rounded-full blur-xs" />
                 </div>
               </div>
 
-              <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="font-serif text-2xl sm:text-[26px] font-bold tracking-tight text-[#1E1E1E] group-hover:text-[#882434] transition-colors">
+              <div className="truncate">
+                <div className="flex items-center gap-1 sm:gap-1.5">
+                  <span className="font-serif text-lg sm:text-2xl lg:text-[26px] font-bold tracking-tight text-[#1E1E1E] group-hover:text-[#882434] transition-colors truncate">
                     Impressive<span className="text-[#882434]">Gifts</span>
                   </span>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-[#C59B27] bg-[#FDF9EE] px-1.5 py-0.5 rounded border border-[#E5BE53]/40">
+                  <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-[#C59B27] bg-[#FDF9EE] px-1 sm:px-1.5 py-0.5 rounded border border-[#E5BE53]/40 shrink-0">
                     Luxe
                   </span>
                 </div>
@@ -187,7 +187,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Action Icons */}
-          <div className="flex items-center gap-1 sm:gap-2">
+          <div className="flex items-center gap-1 sm:gap-2 shrink-0">
             {/* Interactive Gift Finder Button */}
             <button
               onClick={() => setIsGiftFinderOpen(true)}
@@ -197,10 +197,10 @@ export const Header: React.FC<HeaderProps> = ({
               <span>Gift Finder</span>
             </button>
 
-            {/* Wishlist */}
+            {/* Wishlist - hidden on mobile since it's already in the mobile bottom navigation bar */}
             <button
               onClick={() => handleNavClick('wishlist')}
-              className="relative p-2.5 text-stone-700 hover:text-[#882434] hover:bg-stone-100/70 rounded-full transition-all cursor-pointer"
+              className="hidden sm:flex relative p-2.5 text-stone-700 hover:text-[#882434] hover:bg-stone-100/70 rounded-full transition-all cursor-pointer"
               aria-label="Wishlist"
             >
               <Heart className="w-5 h-5" />
@@ -214,7 +214,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Customer Account / Sign In */}
             <button
               onClick={() => handleNavClick('account')}
-              className="relative flex items-center gap-1.5 p-2 text-stone-700 hover:text-[#882434] hover:bg-stone-100/70 rounded-full transition-all cursor-pointer"
+              className="relative flex items-center gap-1.5 p-1.5 sm:p-2 text-stone-700 hover:text-[#882434] hover:bg-stone-100/70 rounded-full transition-all cursor-pointer"
               aria-label="Customer Account"
               title={isLoggedIn ? `Customer Account: ${user.name}` : 'Customer Sign In / Register'}
             >
@@ -227,7 +227,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Shopping Cart Drawer Trigger */}
             <button
               onClick={() => setIsCartDrawerOpen(true)}
-              className="relative flex items-center gap-2 py-2 px-3 bg-[#882434] hover:bg-[#701825] text-white rounded-full shadow-xs hover:shadow-md transition-all cursor-pointer group"
+              className="relative flex items-center gap-1 sm:gap-2 p-1.5 sm:py-2 sm:px-3 bg-[#882434] hover:bg-[#701825] text-white rounded-full shadow-xs hover:shadow-md transition-all cursor-pointer group"
               aria-label="Shopping Cart"
             >
               <ShoppingBag className="w-4 h-4 group-hover:scale-110 transition-transform" />
