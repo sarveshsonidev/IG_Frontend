@@ -71,7 +71,7 @@ export const OCCASIONS: OccasionInfo[] = [
     title: 'Festivals',
     subtitle: 'Diwali, Rakhi, Eid & New Year Celebrations',
     tagline: 'Illuminated festive gift hampers, customized sweets boxes & brass diyas.',
-    imageUrl: 'https://images.unsplash.com/photo-1607344645866-009c320b5ab8?q=80&w=800&auto=format&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1514517521153-1be72277b32f?q=80&w=800&auto=format&fit=crop',
     badge: 'Festive',
   },
   {

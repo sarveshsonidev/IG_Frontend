@@ -266,6 +266,10 @@ export const HomePage: React.FC<HomePageProps> = ({
               <img
                 src={occ.imageUrl}
                 alt={occ.title}
+                loading="lazy"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1514517521153-1be72277b32f?q=80&w=800&auto=format&fit=crop';
+                }}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-linear-to-t from-stone-950/85 via-stone-900/30 to-transparent" />
