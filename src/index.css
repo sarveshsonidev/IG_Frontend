@@ -35,6 +35,7 @@
     color: #1E1E1E;
     font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1, h2, h3, .font-serif-luxury {
@@ -44,6 +45,15 @@
   .font-script {
     font-family: 'Great Vibes', cursive;
   }
+}
+
+/* Hide scrollbars for clean mobile swiping */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Custom scrollbars */

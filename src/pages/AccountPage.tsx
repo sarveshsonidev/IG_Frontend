@@ -521,11 +521,11 @@ export const AccountPage: React.FC<AccountPageProps> = ({
       {/* Tabs Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Navigation Sidebar */}
-        <aside className="lg:col-span-3 bg-white p-3 rounded-3xl border border-[#EAE4DA] space-y-1 shadow-xs">
+        <aside className="lg:col-span-3 bg-white p-2 sm:p-3 rounded-2xl sm:rounded-3xl border border-[#EAE4DA] flex lg:flex-col overflow-x-auto gap-1.5 sm:gap-2 lg:gap-1 shadow-xs scrollbar-none w-full">
           <button
             onClick={() => setActiveTab('orders')}
-            className={`w-full text-left px-4 py-3 rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center gap-3 transition-colors cursor-pointer ${
-              activeTab === 'orders' ? 'bg-[#882434] text-white' : 'text-stone-700 hover:bg-stone-50'
+            className={`shrink-0 whitespace-nowrap text-left px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center gap-2 sm:gap-3 transition-colors cursor-pointer ${
+              activeTab === 'orders' ? 'bg-[#882434] text-white shadow-xs' : 'text-stone-700 hover:bg-stone-50'
             }`}
           >
             <Package className="w-4 h-4" />
@@ -534,8 +534,8 @@ export const AccountPage: React.FC<AccountPageProps> = ({
 
           <button
             onClick={() => setActiveTab('profile')}
-            className={`w-full text-left px-4 py-3 rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center gap-3 transition-colors cursor-pointer ${
-              activeTab === 'profile' ? 'bg-[#882434] text-white' : 'text-stone-700 hover:bg-stone-50'
+            className={`shrink-0 whitespace-nowrap text-left px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center gap-2 sm:gap-3 transition-colors cursor-pointer ${
+              activeTab === 'profile' ? 'bg-[#882434] text-white shadow-xs' : 'text-stone-700 hover:bg-stone-50'
             }`}
           >
             <User className="w-4 h-4" />
@@ -544,8 +544,8 @@ export const AccountPage: React.FC<AccountPageProps> = ({
 
           <button
             onClick={() => setActiveTab('addresses')}
-            className={`w-full text-left px-4 py-3 rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center gap-3 transition-colors cursor-pointer ${
-              activeTab === 'addresses' ? 'bg-[#882434] text-white' : 'text-stone-700 hover:bg-stone-50'
+            className={`shrink-0 whitespace-nowrap text-left px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center gap-2 sm:gap-3 transition-colors cursor-pointer ${
+              activeTab === 'addresses' ? 'bg-[#882434] text-white shadow-xs' : 'text-stone-700 hover:bg-stone-50'
             }`}
           >
             <MapPin className="w-4 h-4" />
@@ -554,8 +554,8 @@ export const AccountPage: React.FC<AccountPageProps> = ({
 
           <button
             onClick={() => setActiveTab('designs')}
-            className={`w-full text-left px-4 py-3 rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center gap-3 transition-colors cursor-pointer ${
-              activeTab === 'designs' ? 'bg-[#882434] text-white' : 'text-stone-700 hover:bg-stone-50'
+            className={`shrink-0 whitespace-nowrap text-left px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center gap-2 sm:gap-3 transition-colors cursor-pointer ${
+              activeTab === 'designs' ? 'bg-[#882434] text-white shadow-xs' : 'text-stone-700 hover:bg-stone-50'
             }`}
           >
             <Sparkles className="w-4 h-4" />
@@ -564,8 +564,8 @@ export const AccountPage: React.FC<AccountPageProps> = ({
 
           <button
             onClick={() => setActiveTab('coupons')}
-            className={`w-full text-left px-4 py-3 rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center gap-3 transition-colors cursor-pointer ${
-              activeTab === 'coupons' ? 'bg-[#882434] text-white' : 'text-stone-700 hover:bg-stone-50'
+            className={`shrink-0 whitespace-nowrap text-left px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center gap-2 sm:gap-3 transition-colors cursor-pointer ${
+              activeTab === 'coupons' ? 'bg-[#882434] text-white shadow-xs' : 'text-stone-700 hover:bg-stone-50'
             }`}
           >
             <Tag className="w-4 h-4" />
@@ -574,15 +574,15 @@ export const AccountPage: React.FC<AccountPageProps> = ({
 
           <button
             onClick={() => setActiveTab('help')}
-            className={`w-full text-left px-4 py-3 rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center gap-3 transition-colors cursor-pointer ${
-              activeTab === 'help' ? 'bg-[#882434] text-white' : 'text-stone-700 hover:bg-stone-50'
+            className={`shrink-0 whitespace-nowrap text-left px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center gap-2 sm:gap-3 transition-colors cursor-pointer ${
+              activeTab === 'help' ? 'bg-[#882434] text-white shadow-xs' : 'text-stone-700 hover:bg-stone-50'
             }`}
           >
             <HelpCircle className="w-4 h-4" />
             <span>Help & Concierge</span>
           </button>
 
-          <div className="pt-2 border-t border-stone-100 mt-2">
+          <div className="hidden lg:block pt-2 border-t border-stone-100 mt-2">
             <button
               onClick={() => {
                 logout();

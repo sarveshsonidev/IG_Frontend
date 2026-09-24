@@ -97,11 +97,11 @@ export const LivePreviewCanvas: React.FC<LivePreviewCanvasProps> = ({
       )}
 
       {overlayType === 'mug' && (
-        <div className="relative w-64 h-64 flex items-center justify-center">
+        <div className="relative w-52 h-52 sm:w-64 sm:h-64 flex items-center justify-center">
           {/* Ceramic Mug Body Shape */}
-          <div className="relative w-48 h-56 rounded-b-[40px] rounded-t-lg bg-linear-to-r from-stone-900 via-stone-800 to-stone-900 shadow-2xl p-4 flex flex-col items-center justify-center border-t-2 border-stone-700 overflow-hidden">
+          <div className="relative w-40 h-48 sm:w-48 sm:h-56 rounded-b-[40px] rounded-t-lg bg-linear-to-r from-stone-900 via-stone-800 to-stone-900 shadow-2xl p-3 sm:p-4 flex flex-col items-center justify-center border-t-2 border-stone-700 overflow-hidden">
             {/* Handle on the right */}
-            <div className="absolute -right-8 top-12 w-12 h-28 border-[10px] border-stone-800 rounded-r-3xl shadow-md pointer-events-none" />
+            <div className="absolute -right-7 sm:-right-8 top-10 sm:top-12 w-10 sm:w-12 h-24 sm:h-28 border-[8px] sm:border-[10px] border-stone-800 rounded-r-3xl shadow-md pointer-events-none" />
 
             {/* Custom Photo Print on Mug */}
             <div className="w-full h-32 rounded-lg overflow-hidden border border-white/20 shadow-md relative group">
@@ -168,11 +168,11 @@ export const LivePreviewCanvas: React.FC<LivePreviewCanvasProps> = ({
       )}
 
       {overlayType === 'cushion' && (
-        <div className="relative w-64 h-64 rounded-3xl bg-linear-to-br from-amber-100 via-white to-amber-200 shadow-2xl p-5 flex flex-col items-center justify-center border-4 border-[#C59B27]/40 overflow-hidden">
+        <div className="relative w-52 h-52 sm:w-64 sm:h-64 rounded-3xl bg-linear-to-br from-amber-100 via-white to-amber-200 shadow-2xl p-4 sm:p-5 flex flex-col items-center justify-center border-4 border-[#C59B27]/40 overflow-hidden">
           {/* Plush Wrinkle / Pillowed shadow effect */}
           <div className="absolute inset-0 bg-radial from-transparent to-black/10 pointer-events-none" />
           
-          <div className="w-44 h-44 rounded-2xl overflow-hidden shadow-lg border-2 border-white relative">
+          <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden shadow-lg border-2 border-white relative">
             <img
               src={customPhoto}
               alt="Cushion photo"
@@ -190,9 +190,9 @@ export const LivePreviewCanvas: React.FC<LivePreviewCanvasProps> = ({
       )}
 
       {overlayType === 'bottle' && (
-        <div className="relative w-48 h-64 flex flex-col items-center justify-center">
+        <div className="relative w-40 h-56 sm:w-48 sm:h-64 flex flex-col items-center justify-center">
           {/* Smart Flask Silhouette */}
-          <div className="relative w-28 h-56 rounded-t-3xl rounded-b-2xl bg-linear-to-r from-stone-900 via-stone-800 to-stone-950 shadow-2xl flex flex-col items-center justify-between p-3 border-t border-stone-600">
+          <div className="relative w-24 h-48 sm:w-28 sm:h-56 rounded-t-3xl rounded-b-2xl bg-linear-to-r from-stone-900 via-stone-800 to-stone-950 shadow-2xl flex flex-col items-center justify-between p-3 border-t border-stone-600">
             {/* LED Top Screen */}
             <div className="w-14 h-4 rounded-full bg-black border border-stone-700 flex items-center justify-center">
               <span className="text-[10px] text-cyan-400 font-mono font-bold tracking-wider">

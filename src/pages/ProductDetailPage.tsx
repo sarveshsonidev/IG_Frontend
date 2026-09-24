@@ -723,18 +723,26 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
       )}
 
       {/* Sticky Bottom Bar for Mobile View */}
-      <div className="lg:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur-md p-3.5 border-t border-[#EAE4DA] shadow-xl flex items-center justify-between gap-3">
-        <div>
-          <span className="text-[10px] text-stone-400 uppercase font-semibold">Total Price</span>
-          <div className="text-lg font-bold text-[#882434]">{formatPrice(product.price * quantity)}</div>
+      <div className="lg:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur-md p-3 border-t border-[#EAE4DA] shadow-[0_-4px_20px_rgba(0,0,0,0.08)] flex items-center justify-between gap-2.5 pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))]">
+        <div className="shrink-0">
+          <span className="text-[10px] text-stone-400 uppercase font-semibold block leading-none">Total</span>
+          <div className="text-base font-bold text-[#882434] leading-tight">{formatPrice(product.price * quantity)}</div>
         </div>
 
         <button
           onClick={handleAddToCart}
-          className="flex-1 py-3 rounded-xl bg-[#882434] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md"
+          className="flex-1 py-3 px-2 rounded-xl bg-white border border-[#882434] text-[#882434] hover:bg-[#882434]/5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1 shadow-xs cursor-pointer active:scale-95 transition-all"
+        >
+          <ShoppingBag className="w-3.5 h-3.5" />
+          <span>Cart</span>
+        </button>
+
+        <button
+          onClick={handleBuyNow}
+          className="flex-1 py-3 px-2 rounded-xl bg-[#882434] hover:bg-[#6E1B28] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1 shadow-md cursor-pointer active:scale-95 transition-all"
         >
           <Sparkles className="w-3.5 h-3.5 text-[#F5D061]" />
-          <span>{product.isPersonalizable ? 'Add Custom Gift' : 'Add to Cart'}</span>
+          <span>Buy Now</span>
         </button>
       </div>
     </div>

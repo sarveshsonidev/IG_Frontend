@@ -20,6 +20,7 @@ import { CompareModal } from './components/common/CompareModal';
 import { SmartSearchModal } from './components/smart/SmartSearchModal';
 import { GiftFinderModal } from './components/smart/GiftFinderModal';
 import { CorporateQuoteModal } from './components/corporate/CorporateQuoteModal';
+import { MobileBottomNav } from './components/common/MobileBottomNav';
 
 import { HomePage } from './pages/HomePage';
 import { ShopPage } from './pages/ShopPage';
@@ -167,7 +168,7 @@ const MainAppContent: React.FC = () => {
       />
 
       {/* 2. Main Page Views */}
-      <main className="flex-1">
+      <main className="flex-1 pb-20 lg:pb-0">
         {currentView === 'home' && (
           <HomePage
             products={products}
@@ -310,8 +311,14 @@ const MainAppContent: React.FC = () => {
 
       <ToastContainer />
 
-      {/* 5. Floating Action Buttons (WhatsApp Concierge + Back to Top) */}
-      <div className="fixed bottom-6 left-6 z-40 flex flex-col gap-3">
+      {/* 5. Mobile & Tablet Bottom Navigation Bar */}
+      <MobileBottomNav
+        currentView={currentView}
+        setCurrentView={setCurrentView}
+      />
+
+      {/* 6. Floating Action Buttons (WhatsApp Concierge + Back to Top) */}
+      <div className="fixed bottom-20 sm:bottom-22 lg:bottom-6 left-4 sm:left-6 z-40 flex flex-col gap-3">
         <button
           onClick={openWhatsAppSupport}
           className="w-12 h-12 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white flex items-center justify-center shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer group"
@@ -325,7 +332,7 @@ const MainAppContent: React.FC = () => {
       </div>
 
       {showBackToTop && (
-        <div className="fixed bottom-6 right-6 z-40">
+        <div className="fixed bottom-20 sm:bottom-22 lg:bottom-6 right-4 sm:right-6 z-40">
           <button
             onClick={scrollToTop}
             className="w-10 h-10 rounded-full bg-stone-900/80 hover:bg-[#882434] text-white backdrop-blur-xs flex items-center justify-center shadow-md transition-all cursor-pointer"
